@@ -7,6 +7,6 @@ const loaderEl = document.querySelector('.js-loader');
 
 fetchPhotosByQuery()
   .then(imagesData => {
-    galleryEl.innerHTML = createMarkupItem(imagesData.results);
+    galleryEl.innerHTML = createMarkupItem(imagesData.hits);
   })
   .catch(error => console.log(error));
