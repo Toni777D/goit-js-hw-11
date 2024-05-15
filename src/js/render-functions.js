@@ -1,10 +1,5 @@
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
-
-// iziToast.error({
-//   title: 'Error',
-//   message: 'Illegal operation',
-// });
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export const createMarkupItem = images => {
   return images
@@ -41,7 +36,7 @@ export const createMarkupItem = images => {
     .join('');
 };
 
-// const lightbox = new SimpleLightbox('.gallery a', {
-//   captionsData: 'alt',
-//   captionDelay: 250,
-// });
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
