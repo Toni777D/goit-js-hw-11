@@ -27,7 +27,7 @@ function onSearchFormSubmit(event) {
 
   fetchPhotosByQuery(searchQuery)
     .then(imagesData => {
-      if (imagesData.total === 0) {
+      if (imagesData.totalHits === 0) {
         iziToast.show({
           message:
             'Sorry, there are no images matching your search query. Please try again!',
@@ -36,7 +36,7 @@ function onSearchFormSubmit(event) {
           color: 'red',
         });
       }
-      galleryEl.innerHTML = createMarkupItem(imagesData.results);
+      galleryEl.innerHTML = createMarkupItem(imagesData.hits);
     })
 
     .catch(error => console.log(error))
