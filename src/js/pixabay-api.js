@@ -14,11 +14,7 @@ export const fetchPhotosByQuery = query => {
 
   return fetch(`${BASE_URL}?${searchParams}`).then(response => {
     if (!response.ok) {
-      iziToast.error({
-        title: 'Sorry',
-        message:
-          'there are no images matching your search query. Please try again!',
-      });
+      throw new Error(response.statusText);
     }
     return response.json();
   });
